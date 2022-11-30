@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:ROIStaffApp.ViewModels" 
+             xmlns:models="clr-namespace:ROIStaffApp.Models" 
+             xmlns:roistaffapp="clr-namespace:ROIStaffApp"
+             BackgroundColor="#F2A2B1"
+             x:Name="Homepage"
+             x:Class="ROIStaffApp.Views.HomePage"
+             x:DataType="viewmodels:HomePageViewModel"
+             xmlns:local="clr-namespace:ROIStaffApp">
+            
+
+    <ContentPage.BindingContext>
+        <viewmodels:HomePageViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Button Text="Add new contact"
+                BackgroundColor="#A61C1C"
+                CornerRadius="4"
+                Clicked="Button_Clicked"/>
+        
+        <ListView ItemsSource="{Binding Staff}"
+              HasUnevenRows="True"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}">
+               
+        
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Department">
+                <ViewCell>
+                    <Grid Padding="15">
+                        <Frame CornerRadius="10"
+                               >
+                            <StackLayout Orientation="Horizontal">
+                                <Label 
+                                    Text="{Binding Id}"
+                                       FontSize="Large"
+                                       WidthRequest="25"
+                                       VerticalOptions="CenterAndExpand"/>
+                                <Image Source="{local:ImageResource ROIStaffApp.image.profile.jpg}"
+                                       WidthRequest="100"/>
+
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"
+                                       Padding="8"
+                                       FontSize="Large"
+                                       VerticalOptions="Center"/>
+                                    <Label Text="{Binding DepartName}"
+                                       Padding="8"
+                                       FontSize="Medium"
+                                       VerticalOptions="Center"/>
+                                    <Label Text="{Binding Phone}"
+                                       Padding="8"
+                                       FontSize="Medium"
+                                       VerticalOptions="Center"/>
+                                </StackLayout>
+                                <Button Text="Edit"
+                                        FontSize="Small"
+                                        VerticalOptions="Center"
+                                        WidthRequest="60"
+                                        Padding="6"/>
+                                        
+                            </StackLayout>
+
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+    </StackLayout>
+</ContentPage>

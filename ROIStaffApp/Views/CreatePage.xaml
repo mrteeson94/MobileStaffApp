@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ROIStaffApp.Views.CreatePage">
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,20">
+            <Entry x:Name="nameEntry"
+               Placeholder="Enter name" />
+            <Entry x:Name="phoneNoEntry"
+               Placeholder="Enter Phone" />
+            <Entry x:Name="DepartmentEntry"
+               Placeholder="Enter Department number" />
+            <Entry x:Name="streetEntry"
+               Placeholder="Enter street details" />
+            <Entry x:Name="cityEntry"
+               Placeholder="Enter City" />
+            <Entry x:Name="stateEntry"
+               Placeholder="Enter state" />
+            <Entry x:Name="zipEntry"
+               Placeholder="Enter ZIP" />
+            <Entry x:Name="countryEntry"
+               Placeholder="Enter country" />
+            <Button Text="Add to Database"
+                Clicked="Button_Clicked"/>
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Name}"
+                               FontSize="Medium" />
+                            <Label Text="{Binding Phone}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                            <Label Text="{Binding Department}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                            <Label Text="{Binding Street}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                            <Label Text="{Binding City}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                            <Label Text="{Binding State}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                            <Label Text="{Binding Zip}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                            <Label Text="{Binding Country}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+
+
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
