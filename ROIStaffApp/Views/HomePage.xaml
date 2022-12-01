@@ -30,7 +30,7 @@
                
         
         <ListView.ItemTemplate>
-            <DataTemplate x:DataType="models:Department">
+            <DataTemplate x:DataType="models:Staff">
                 <ViewCell>
                     <Grid Padding="15">
                         <Frame CornerRadius="10"
@@ -49,7 +49,7 @@
                                        Padding="8"
                                        FontSize="Large"
                                        VerticalOptions="Center"/>
-                                    <Label Text="{Binding DepartName}"
+                                    <Label Text="{Binding Department}"
                                        Padding="8"
                                        FontSize="Medium"
                                        VerticalOptions="Center"/>

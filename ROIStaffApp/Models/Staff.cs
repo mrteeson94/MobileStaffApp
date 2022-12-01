@@ -1,7 +1,4 @@
 ﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ROIStaffApp.Models
 {
@@ -17,13 +14,5 @@ namespace ROIStaffApp.Models
         public string State { get; set; }
         public int Zip { get; set; }
         public string Country { get; set; }
-
-    }
-
-    public class Department : Staff
-    {
-        [Indexed]
-        public int DepartId { get; set; }
-        public string DepartName { get; set; }
     }
 }
