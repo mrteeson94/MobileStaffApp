@@ -18,7 +18,7 @@
             <Entry x:Name="stateEntry"
                Placeholder="Enter state" />
             <Entry x:Name="zipEntry"
-               Placeholder="Enter ZIP" />
+               Placeholder="Enter ZIP (4 digits)" />
             <Entry x:Name="countryEntry"
                Placeholder="Enter country" />
             <Button Text="Add New Staff"
@@ -27,7 +27,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Label Text="The following details have been added:"
+                            <Label Text="History:"
                                FontSize="Medium" />
                             <Label Text="{Binding Id}"
                                FontSize="Small" />

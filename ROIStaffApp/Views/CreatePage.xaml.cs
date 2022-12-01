@@ -31,7 +31,8 @@ namespace ROIStaffApp.Views
                !string.IsNullOrWhiteSpace(zipEntry.Text) &&
                !string.IsNullOrWhiteSpace(countryEntry.Text))
             {
-                await Database.AddStaff(nameEntry.Text, phoneNoEntry.Text, DepartmentEntry.Text, streetEntry.Text, cityEntry.Text, stateEntry.Text, int.Parse(zipEntry.Text), countryEntry.Text);
+                await Database.AddStaff(nameEntry.Text, phoneNoEntry.Text, DepartmentEntry.Text, streetEntry.Text, cityEntry.Text, (stateEntry.Text).ToUpper(), int.Parse(zipEntry.Text), countryEntry.Text);
+                collectionView.ItemsSource = await Database.GetStaff();
             }
         }
     }

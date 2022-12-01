@@ -21,7 +21,8 @@
                 CornerRadius="4"
                 Clicked="Button_Clicked"/>
         
-        <ListView ItemsSource="{Binding Staff}"
+        <ListView x:Name="ListView"
+                  ItemsSource="{Binding Staff}"
               HasUnevenRows="True"
               SeparatorVisibility="None"
               IsPullToRefreshEnabled="True"

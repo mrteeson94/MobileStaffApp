@@ -1,7 +1,6 @@
-﻿using ROIStaffApp.ViewModels;
-using System.Reflection;
+﻿using ROIStaffApp.Services;
+using ROIStaffApp.ViewModels;
 using System;
-using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,11 +13,15 @@ namespace ROIStaffApp.Views
         {
             InitializeComponent();
             BindingContext = new HomePageViewModel();
+            ListView.ItemsSource = (System.Collections.IEnumerable)Database.GetStaff();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CreatePage());
         }
+
+        
+
     }
 }

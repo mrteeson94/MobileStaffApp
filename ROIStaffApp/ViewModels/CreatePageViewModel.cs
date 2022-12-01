@@ -11,12 +11,8 @@ namespace ROIStaffApp.ViewModels
 {
     internal class CreatePageViewModel : ViewModelBase
     {
-        public ObservableRangeCollection<Staff> Staff { get; set; }
-        public AsyncCommand AddCommand { get; }
-
         public CreatePageViewModel()
         {
-            Staff = new ObservableRangeCollection<Staff>();
 
         }
     }
