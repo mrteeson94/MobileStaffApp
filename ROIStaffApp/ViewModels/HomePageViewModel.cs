@@ -17,20 +17,8 @@ namespace ROIStaffApp.ViewModels
 
         public HomePageViewModel()
         {
-            //Title = "Staff Directory Home";
-            Staff = new ObservableRangeCollection<Staff>();
-
-
             RefreshCommand = new AsyncCommand(Refresh);
         }
-
-
-        //put in StaffPage
-        //async Task Remove(Staff staff)
-        //{
-        //    await Database.RemoveStaff(staff.Id);
-        //    await Refresh();
-        //}
 
         async Task Refresh()
         {
@@ -44,6 +32,7 @@ namespace ROIStaffApp.ViewModels
 
             IsBusy = false;
         }
+
 
     }
 }

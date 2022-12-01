@@ -51,7 +51,11 @@ namespace ROIStaffApp.Services
             var staff = await db.Table<Staff>().ToListAsync();
                 return staff;
         }
-
+        public static async Task EditStaff(Staff staff)
+        {
+            await Init();
+            await db.UpdateAsync(staff);
+        }
     }
 }
 

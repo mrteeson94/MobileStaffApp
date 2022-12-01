@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ROIStaffApp.Views.CreatePage">
+             x:Class="ROIStaffApp.Views.CreatePage"
+             BackgroundColor="#F2A2B1"
+             Title="Add New Staff">
+    
+    
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
             
@@ -21,8 +25,10 @@
                Placeholder="Enter ZIP (4 digits)" />
             <Entry x:Name="countryEntry"
                Placeholder="Enter country" />
+            
             <Button Text="Add New Staff"
                 Clicked="Button_Clicked"/>
+            
             <CollectionView x:Name="collectionView">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

@@ -17,7 +17,6 @@ namespace ROIStaffApp.Views
         public CreatePage()
         {
             InitializeComponent();
-            BindingContext = new CreatePageViewModel();
         }
 
         async void Button_Clicked(object sender, System.EventArgs e)
@@ -32,8 +31,14 @@ namespace ROIStaffApp.Views
                !string.IsNullOrWhiteSpace(countryEntry.Text))
             {
                 await Database.AddStaff(nameEntry.Text, phoneNoEntry.Text, DepartmentEntry.Text, streetEntry.Text, cityEntry.Text, (stateEntry.Text).ToUpper(), int.Parse(zipEntry.Text), countryEntry.Text);
+
+                await DisplayAlert("Update!", "New contact added!", "OK");
+
                 collectionView.ItemsSource = await Database.GetStaff();
+
             }
+            else
+                await DisplayAlert("Invalid","Please fill all entry field when adding new staff", "OK");
         }
     }
 }

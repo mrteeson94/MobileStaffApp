@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:models="clr-namespace:ROIStaffApp.Models"
+             x:Class="ROIStaffApp.Views.StaffPage"
+             xmlns:local="clr-namespace:ROIStaffApp"
+             BackgroundColor="#F2A2B1"
+             Title="Staff Information">
+
+    <StackLayout>
+        <Image Source="{local:ImageResource ROIStaffApp.image.profile.jpg}"/>
+        <Label x:Name="labelId"
+            Text="{Binding Id}"
+               FontSize="Large"
+               HorizontalOptions="CenterAndExpand"/>
+        <StackLayout Margin="15" >
+
+            <Frame BorderColor="Black"
+                   Padding="5"
+                   CornerRadius="10">
+                <StackLayout>
+                    
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout >
+                            <Entry x:Name="nameEntry"
+                        Placeholder="{Binding Name}" 
+                        Grid.Row="0"
+                                   WidthRequest="100"/>
+
+                            <Entry x:Name="phoneEntry"
+                        Placeholder="{Binding Phone}" 
+                        Grid.Row="1"
+                        Grid.Column="0"/>
+
+                            <Entry x:Name="DepartmentEntry"
+                        Placeholder="{Binding Department}"
+                        Grid.Row="2"
+                        Grid.Column="0"/>
+
+                            <Entry x:Name="streetEntry"
+                        Placeholder="{Binding Street}"
+                        Grid.Row="3"
+                        Grid.Column="0"/>
+
+                            <Entry x:Name="cityEntry"
+                        Placeholder="{Binding City}"
+                        Grid.Row="4"
+                        Grid.Column="0"/>
+
+                            <Entry x:Name="stateEntry"
+                        Placeholder="{Binding State}"
+                        Grid.Row="5"
+                        Grid.Column="0"/>
+
+                            <Entry x:Name="zipEntry"
+                        Placeholder="{Binding Zip}" 
+                        Grid.Row="6"
+                        Grid.Column="0"/>
+
+                            <Entry x:Name="countryEntry"
+                        Placeholder="{Binding Country}"
+                        Grid.Row="7"
+                        Grid.Column="0"/>
+                        </StackLayout>
+                        <Button Text="Update"
+                                     Clicked="Button_Clicked"
+                                Grid.Row="9"
+                                Grid.Column="0"/>
+
+                        <Button Text="Delete"
+                                     Clicked="Button_Clicked_1"
+                                Grid.Row="9"
+                                Grid.Column="1"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -8,8 +8,9 @@
              x:Name="Homepage"
              x:Class="ROIStaffApp.Views.HomePage"
              x:DataType="viewmodels:HomePageViewModel"
-             xmlns:local="clr-namespace:ROIStaffApp">
-            
+             xmlns:local="clr-namespace:ROIStaffApp"
+             Title="Staff Directory">
+
 
     <ContentPage.BindingContext>
         <viewmodels:HomePageViewModel/>
@@ -20,59 +21,59 @@
                 BackgroundColor="#A61C1C"
                 CornerRadius="4"
                 Clicked="Button_Clicked"/>
-        
+
         <ListView x:Name="ListView"
-                  ItemsSource="{Binding Staff}"
-              HasUnevenRows="True"
-              SeparatorVisibility="None"
-              IsPullToRefreshEnabled="True"
-              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-              RefreshCommand="{Binding RefreshCommand}">
-               
-        
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="models:Staff">
-                <ViewCell>
-                    <Grid Padding="15">
-                        <Frame CornerRadius="10"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  IsPullToRefreshEnabled="True"   
+                  IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                  RefreshCommand="{Binding RefreshCommand}">
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Staff">
+                    <ViewCell>
+                        <Grid Padding="15">
+                            <Frame CornerRadius="10"
                                >
-                            <StackLayout Orientation="Horizontal">
-                                <Label 
+                                <StackLayout Orientation="Horizontal">
+                                    <Label 
                                     Text="{Binding Id}"
                                        FontSize="Large"
                                        WidthRequest="25"
                                        VerticalOptions="CenterAndExpand"/>
-                                <Image Source="{local:ImageResource ROIStaffApp.image.profile.jpg}"
+                                    <Image Source="{local:ImageResource ROIStaffApp.image.profile.jpg}"
                                        WidthRequest="100"/>
 
-                                <StackLayout VerticalOptions="Center">
-                                    <Label Text="{Binding Name}"
+                                    <StackLayout VerticalOptions="Center">
+                                        <Label Text="{Binding Name}"
                                        Padding="8"
                                        FontSize="Large"
                                        VerticalOptions="Center"/>
-                                    <Label Text="{Binding Department}"
+                                        <Label Text="{Binding Department}"
                                        Padding="8"
                                        FontSize="Medium"
                                        VerticalOptions="Center"/>
-                                    <Label Text="{Binding Phone}"
+                                        <Label Text="{Binding Phone}"
                                        Padding="8"
                                        FontSize="Medium"
                                        VerticalOptions="Center"/>
-                                </StackLayout>
-                                <Button Text="Edit"
+                                    </StackLayout>
+                                    <Button Text="Edit"
                                         FontSize="Small"
                                         VerticalOptions="Center"
                                         WidthRequest="60"
-                                        Padding="6"/>
-                                        
-                            </StackLayout>
+                                        Padding="6"
+                                        CommandParameter="{Binding .}"
+                                         Clicked="Button_Clicked_1"
+                                            />
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
-                        </Frame>
-                    </Grid>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-
-    </ListView>
+        </ListView>
     </StackLayout>
 </ContentPage>
