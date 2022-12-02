@@ -17,11 +17,13 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
+
+        <Image Source="{local:ImageResource ROIStaffApp.image.ROI.png}"
+                                       WidthRequest="100"/>
         <Button Text="Add new contact"
                 BackgroundColor="#A61C1C"
                 CornerRadius="4"
                 Clicked="Button_Clicked"/>
-
         <ListView x:Name="ListView"
                   HasUnevenRows="True"
                   SeparatorVisibility="None"
@@ -65,8 +67,7 @@
                                         WidthRequest="60"
                                         Padding="6"
                                         CommandParameter="{Binding .}"
-                                         Clicked="Button_Clicked_1"
-                                            />
+                                         Clicked="Button_Clicked_1" />
                                 </StackLayout>
                             </Frame>
                         </Grid>

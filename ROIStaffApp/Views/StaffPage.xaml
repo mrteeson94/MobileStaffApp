@@ -18,8 +18,8 @@
             <Frame BorderColor="Black"
                    Padding="5"
                    CornerRadius="10">
+                
                 <StackLayout>
-                    
 
                     <Grid>
                         <Grid.RowDefinitions>

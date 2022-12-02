@@ -2,13 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ROIStaffApp.Views.CreatePage"
+             xmlns:local="clr-namespace:ROIStaffApp"
              BackgroundColor="#F2A2B1"
              Title="Add New Staff">
     
     
     <ContentPage.Content>
+        
         <StackLayout Margin="20,35,20,20">
-            
+
+            <Image Source="{local:ImageResource ROIStaffApp.image.ROI.png}"
+                                       WidthRequest="100"/>
             <Entry x:Name="nameEntry"
                Placeholder="Enter name" />
             <Entry x:Name="phoneNoEntry"
